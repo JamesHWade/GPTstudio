@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">gptstudio</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,6 @@
 </div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p>The goal of gptstudio is for R programmers to easily incorporate use of large language models (LLMs) into their project workflows. These models appear to be a step change in our use of text for knowledge work, but you should carefully consider ethical implications of using these models. Ethics of LLMs (also called <a href="https://arxiv.org/abs/2108.07258" class="external-link">Foundation Models</a>) is an area of very active discussion.</p>
 <p>For further addins, tailored for R developers, also see the sister package: <a href="https://jameshwade.github.io/gpttools/" class="external-link">gpttools</a></p>
 <div class="section level2">
@@ -84,8 +83,8 @@
 <div class="section level2">
 <h2 id="privacy-notice">Privacy Notice<a class="anchor" aria-label="anchor" href="#privacy-notice"></a>
 </h2>
-<p>These functions work by taking the text or code you have highlighted/selected with the cursor and send these to OpenAI as part of a prompt, they fall under their privacy notice/rules/exceptions you agreed to with OpenAI when making an account. I do not know how secure these are when sent to OpenAI, I also don’t know what OpenAI does with them. The code is designed to ONLY share the highlighted/selected text and no other elements of your R environment (i.e. data) unless you have highlighted it when running the addin. This may limit usability for now, but I do not want people to accidentally share sensitive data with OpenAI.</p>
-<p><strong>DO NOT HIGHLIGHT, AND THEREFORE UPLOAD, DATA/CODE/TEXT THAT SHOULD REMAIN PRIVATE</strong></p>
+<p>These functions work by taking the text or code you have highlighted/selected with the cursor, or your prompt if you use one of the built-in apps, and send these to OpenAI as part of a prompt; they fall under their privacy notice/rules/exceptions you agreed to with OpenAI when making an account. We can’t tell you or guarantee how secure these prompts are when sent to OpenAI. We don’t know what OpenAI does with your prompts, but OpenAI is clear that they use prompts and results to improve their model (see their terms of use) unless you opt-out explicitly by contacting them. The code is designed to ONLY share the highlighted/selected text, or a prompt you build with the help of one of our apps and no other elements of your R environment. Make sure you are aware of what you send to OpenAI and do not accidentally share sensitive data with OpenAI.</p>
+<p><strong>DO NOT HIGHLIGHT, OR INCLUDE IN A PROMPT, AND THEREFORE UPLOAD, DATA/CODE/TEXT THAT SHOULD REMAIN PRIVATE</strong></p>
 </div>
 <div class="section level2">
 <h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
@@ -106,7 +105,7 @@
 <p>Otherwise, you can add the key to the .Renviron file of the project. The following commands will open .Renviron for editing:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://usethis.r-lib.org" class="external-link">usethis</a></span><span class="op">)</span></span>
-<span><span class="fu">edit_r_environ</span><span class="op">(</span>scope <span class="op">=</span> <span class="st">"project"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">edit_r_environ</a></span><span class="op">(</span>scope <span class="op">=</span> <span class="st">"project"</span><span class="op">)</span></span></code></pre></div>
 <p>You can add the following line to the file (again, replace <code>"&lt;APIKEY&gt;"</code> with your actual key):</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">OPENAI_API_KEY</span><span class="op">=</span> <span class="st">"&lt;APIKEY&gt;"</span><span class="er">)</span></span></code></pre></div>
 <p>This now set the API key every time you start up this particular project. Note: If you are using GitHub/Gitlab, do not forget to add .Renviron to .gitignore!</p>
@@ -115,6 +114,16 @@
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Some examples of use.</p>
+<div class="section level3">
+<h3 id="chat-with-gpt-in-quarto">Chat with GPT in Quarto<a class="anchor" aria-label="anchor" href="#chat-with-gpt-in-quarto"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Addins &gt; GPTSTUDIO &gt; Start GPT Chat</strong></li>
+<li>Type your question.</li>
+<li>**Addins &gt; GPTSTUDIO &gt; GPT Chat</li>
+</ol>
+<video src="https://user-images.githubusercontent.com/6314313/210177908-7cf0f991-54f2-4f96-8bcd-3077bc8bbb25.mov" data-canonical-src="https://user-images.githubusercontent.com/6314313/210177908-7cf0f991-54f2-4f96-8bcd-3077bc8bbb25.mov" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;"></video>
+</div>
 <div class="section level3">
 <h3 id="spelling-ang-grammar-check">Spelling ang grammar check<a class="anchor" aria-label="anchor" href="#spelling-ang-grammar-check"></a>
 </h3>
@@ -198,8 +207,8 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://CRAN.R-project.org/package=GPTstudio" class="external-link"><img src="https://www.r-pkg.org/badges/version/GPTstudio" alt="CRAN status"></a></li>
-<li><a href="https://app.codecov.io/gh/JamesHWade/GPTstudio?branch=main" class="external-link"><img src="https://codecov.io/gh/JamesHWade/GPTstudio/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://CRAN.R-project.org/package=GPTstudio" class="external-link"><img src="https://www.r-pkg.org/badges/version/gptstudio" alt="CRAN status"></a></li>
+<li><a href="https://app.codecov.io/gh/MichelNivard/gptstudio?branch=main" class="external-link"><img src="https://codecov.io/gh/MichelNivard/gptstudio/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://github.com/MichelNivard/gptstudio/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/MichelNivard/gptstudio/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
