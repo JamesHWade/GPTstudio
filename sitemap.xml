@@ -4,10 +4,19 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>/CONTRIBUTING.html</loc>
+  </url>
+  <url>
     <loc>/LICENSE-text.html</loc>
   </url>
   <url>
     <loc>/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>/SUPPORT.html</loc>
   </url>
   <url>
     <loc>/authors.html</loc>
@@ -37,6 +46,9 @@
     <loc>/reference/create_gpt_chat.html</loc>
   </url>
   <url>
+    <loc>/reference/get_selection.html</loc>
+  </url>
+  <url>
     <loc>/reference/gpt_addin.html</loc>
   </url>
   <url>
@@ -50,6 +62,9 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/insert_text.html</loc>
   </url>
   <url>
     <loc>/reference/openai_chat.html</loc>
