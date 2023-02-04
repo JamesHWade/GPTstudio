@@ -28,6 +28,9 @@
     <loc>/reference/avAddin.html</loc>
   </url>
   <url>
+    <loc>/reference/chat_gpt_addin.html</loc>
+  </url>
+  <url>
     <loc>/reference/check_api.html</loc>
   </url>
   <url>
@@ -61,6 +64,9 @@
     <loc>/reference/gpt_insert.html</loc>
   </url>
   <url>
+    <loc>/reference/gptstudio-package.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -89,6 +95,9 @@
   </url>
   <url>
     <loc>/reference/sandgAddin.html</loc>
+  </url>
+  <url>
+    <loc>/reference/setup_gpt_chat.html</loc>
   </url>
   <url>
     <loc>/reference/specify_model_addin.html</loc>
